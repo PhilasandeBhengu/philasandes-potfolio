@@ -54,10 +54,37 @@
         padding: 10px;
         cursor: pointer;
         font-size: 16px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
       }
       #menu-button:hover {
         background-color: #555;
         border-radius: 5px;
+      }
+      #sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #444;
+        padding-top: 60px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+      #sidebar a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 0;
+      }
+      #sidebar a:hover {
+        background-color: #555;
       }
       #store {
         background: rgba(255, 255, 255, 0.8);
@@ -149,8 +176,8 @@
   <body>
     <header>E-commerce Store</header>
 
-    <button id="menu-button" onclick="toggleMenu()">Menu</button>
-    <nav id="nav-menu">
+    <button id="menu-button" onclick="toggleSidebar()">Menu</button>
+    <nav id="sidebar">
       <a href="index.html">Home</a>
       <a href="todo.html">To-Do List</a>
       <a href="ecommerce.html">E-commerce</a>
@@ -234,12 +261,12 @@
         updateCart();
       }
 
-      function toggleMenu() {
-        const navMenu = document.getElementById("nav-menu");
-        if (navMenu.style.display === "block") {
-          navMenu.style.display = "none";
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        if (sidebar.style.display === "block") {
+          sidebar.style.display = "none";
         } else {
-          navMenu.style.display = "block";
+          sidebar.style.display = "block";
         }
       }
     </script>
