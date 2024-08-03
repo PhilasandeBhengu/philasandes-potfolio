@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="to-do.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+    <section id="todo-list">
+      <h1>To-Do List</h1>
+      <div class="todo-header">
+        <input type="text" id="todo-input" placeholder="Add a new task..." />
+        <button id="add-button">Add</button>
+      </div>
+      <ul class="todo-items" id="todo-items">
+        <!-- List items will be added here dynamically -->
+      </ul>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Skill bar animation
+        var bars = document.querySelectorAll(".skill-bar div");
+        bars.forEach(function (bar) {
+          var percentage = bar.getAttribute("data-skill");
+          bar.style.width = percentage + "%";
+        });
+
+        // To-Do List functionality
+        const addButton = document.getElementById("add-button");
+        const todoInput = document.getElementById("todo-input");
+        const todoItems = document.getElementById("todo-items");
+
+        addButton.addEventListener("click", function () {
+          const taskText = todoInput.value.trim();
+          if (taskText !== "") {
+            const todoItem = document.createElement("li");
+            todoItem.className = "todo-item";
+            todoItem.innerHTML = `
+                        <span>${taskText}</span>
+                        <button onclick="removeTask(this)">X</button>
+                    `;
+            todoItems.appendChild(todoItem);
+            todoInput.value = "";
+          }
+        });
+
+        todoInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            addButton.click();
+          }
+        });
+      });
+
+      function removeTask(button) {
+        const todoItem = button.parentElement;
+        todoItem.remove();
+      }
+    </script>
+  </body>
+</html>

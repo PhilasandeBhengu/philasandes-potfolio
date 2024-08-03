@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      header {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 24px;
+        width: 100%;
+      }
+      nav {
+        background-color: #444;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 0 10px;
+      }
+      nav a:hover {
+        background-color: #555;
+        border-radius: 5px;
+      }
+      #weather {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 80%;
+        max-width: 400px;
+      }
+      #weather h1 {
+        color: #0072ff;
+        margin-bottom: 20px;
+      }
+      #weather input {
+        padding: 10px;
+        width: calc(100% - 22px);
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      #weather button {
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      #weather button:hover {
+        background-color: #0056b3;
+      }
+      #weather .result {
+        margin-top: 20px;
+      }
+      #weather .result p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Weather App</header>
+
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+
+    <section id="weather">
+      <h1>Weather Information</h1>
+      <input type="text" id="city" placeholder="Enter city name" />
+      <button onclick="getWeather()">Get Weather</button>
+      <div class="result" id="weather-result">
+        <!-- Weather results will be displayed here -->
+      </div>
+    </section>
+
+    <script>
+      const apiKey = "e88f1befdf7f4e94856205245243107"; // Your API key
+
+      function getWeather() {
+        const city = document.getElementById("city").value;
+        const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            const weatherResult = document.getElementById("weather-result");
+            if (data.current) {
+              weatherResult.innerHTML = `
+                        <h2>${data.location.name}, ${data.location.country}</h2>
+                        <p>Temperature: ${data.current.temp_c} &deg;C</p>
+                        <p>Weather: ${data.current.condition.text}</p>
+                        <p>Humidity: ${data.current.humidity}%</p>
+                        <p>Wind Speed: ${data.current.wind_kph} kph</p>
+                    `;
+            } else {
+              weatherResult.innerHTML = `<p>Error: ${data.error.message}</p>`;
+            }
+          })
+          .catch((error) => {
+            document.getElementById(
+              "weather-result"
+            ).innerHTML = `<p>Error: ${error.message}</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>

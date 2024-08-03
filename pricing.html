@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelance Pricing</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="pricing-intro">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </nav>
+      </header>
+      <h1>Freelance Pricing</h1>
+      <p>
+        Welcome to my pricing page! Here you’ll find information on the rates
+        for my freelance services. Each project is unique, so please reach out
+        if you have any specific requirements or questions.
+      </p>
+    </section>
+
+    <section class="pricing-banner">
+      <div class="banner-content">
+        <h1>Our Pricing Plans</h1>
+        <p>Choose a plan that fits your needs and budget.</p>
+        <a href="#pricing" class="banner-button">View Pricing</a>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <h2>Service Packages</h2>
+      <div class="pricing-table">
+        <div class="pricing-item">
+          <h3>Basic Package</h3>
+          <p>
+            <span class="price-za">R1500</span> /
+            <span class="price-us">$270</span>
+          </p>
+          <ul>
+            <li>Basic website setup</li>
+            <li>Up to 5 pages</li>
+            <li>Standard design</li>
+          </ul>
+        </div>
+        <div class="pricing-item">
+          <h3>Standard Package</h3>
+          <p>
+            <span class="price-za">R3000</span> /
+            <span class="price-us">$540</span>
+          </p>
+          <ul>
+            <li>Custom website design</li>
+            <li>Up to 10 pages</li>
+            <li>Responsive layout</li>
+            <li>SEO optimization</li>
+          </ul>
+        </div>
+        <div class="pricing-item">
+          <h3>Premium Package</h3>
+          <p>
+            <span class="price-za">R5000</span> /
+            <span class="price-us">$810</span>
+          </p>
+          <ul>
+            <li>Advanced features</li>
+            <li>Unlimited pages</li>
+            <li>Custom animations</li>
+            <li>Ongoing support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-quotes">
+      <h2>Custom Projects</h2>
+      <p>
+        If you have a unique project or specific requirements, please contact me
+        for a custom quote. I’d be happy to discuss your needs and provide a
+        tailored estimate.
+      </p>
+      <a href="mailto:your-bhenguphilasande21@gmail.com" class="btn">
+        Request a Quote
+      </a>
+    </section>
+
+    <section class="pricing-faq">
+      <h2>FAQs</h2>
+      <div class="faq-item">
+        <h3>What does the price include?</h3>
+        <p>
+          Each package includes the features listed, along with support during
+          the project. Additional features can be added for an extra fee.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Are there any additional costs?</h3>
+        <p>
+          Additional costs may apply for extra features, third-party services,
+          or revisions beyond the scope of the package.
+        </p>
+      </div>
+    </section>
+  </body>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    header {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      transition: background 0.3s ease;
+    }
+
+    header:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00bfff; /* Blue text */
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1e90ff; /* Darker blue on hover */
+    }
+
+    .pricing-intro {
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    /* Banner styling */
+    .pricing-banner {
+      background-image: url("https://images.pexels.com/photos/915915/pexels-photo-915915.jpeg?auto=compress&cs=tinysrgb&w=400"); /* Replace with your banner image URL */
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(
+        0,
+        0,
+        0,
+        0.5
+      ); /* Adds a dark overlay to improve text visibility */
+      border-radius: 8px;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-banner h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .pricing-banner p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    .banner-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: white;
+      background-color: #28a745;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .banner-button:hover {
+      background-color: #218838;
+    }
+
+    /* Pricing section styling */
+    .pricing,
+    .custom-quotes,
+    .pricing-faq {
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 900px;
+    }
+
+    .pricing-table {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .pricing-item {
+      background-color: #ffffff; /* White background for individual items */
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .pricing-item h3 {
+      color: #000000; /* Black for headings */
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .pricing-item p {
+      color: #333333; /* Dark grey for prices */
+      font-size: 1.25em;
+      margin-bottom: 15px;
+    }
+
+    .pricing-item .price-za {
+      font-weight: bold; /* Emphasize ZAR price */
+    }
+
+    .pricing-item .price-us {
+      font-weight: normal; /* Standard weight for USD price */
+      color: #666666; /* Medium grey for secondary currency */
+    }
+
+    .pricing-item ul {
+      list-style-type: none;
+      padding: 0;
+      color: #666666; /* Medium grey for list items */
+    }
+
+    .pricing-item li {
+      margin-bottom: 10px;
+    }
+
+    /* Custom quotes section */
+    .custom-quotes .btn {
+      display: inline-block;
+      background-color: #000000; /* Black button background */
+      color: #ffffff; /* White text */
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    .custom-quotes .btn:hover {
+      background-color: #333333; /* Dark grey on hover */
+    }
+
+    /* FAQs section */
+    .pricing-faq .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .pricing-faq h3 {
+      color: #000000; /* Black for FAQ headings */
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+
+    .pricing-faq p {
+      color: #666666;
+    }
+  </style>
+</html>
